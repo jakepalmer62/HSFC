@@ -10,34 +10,23 @@ namespace Number_Program
 
             Random rnd = new Random(); //generate a seed for a random number
             int Number = rnd.Next(0, 101); //delivers a random value from 1-100
-            int Guess = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter your guess between 1 and 100");
             int Guess1 = Convert.ToInt32(Console.ReadLine());
 
-            if (int Guess1 > int Number ) {
+            if (Guess1 > Number)
+            {
                 Console.WriteLine("Too High");
-            }
-            if (int Guess1 < int Number) {
+            }               
+            if (Guess1 < Number)
+            {
                 Console.WriteLine("Too Low");
-
             }
-            if (int Guess1 == int Number) {
+            if (Guess1 == Number)
+            {
                 Console.WriteLine("You got it!");
             }
-
-
-
-
-
-
-
-
-        }    
-
-
-
-
-    
-    
+            Console.WriteLine("Press any key to exit");
+            Console.ReadLine();
+        }       
     }
 }
