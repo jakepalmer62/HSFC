@@ -4,8 +4,8 @@ using System.Text;
 
 namespace NoughtsAndCrosses
 {
-    class OXO
+    class OXO //Noughts and Crosses Class
     {
-
+        
     }
 }
