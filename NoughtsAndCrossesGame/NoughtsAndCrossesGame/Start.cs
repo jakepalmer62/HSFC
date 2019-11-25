@@ -21,5 +21,10 @@ namespace NoughtsAndCrossesGame
         {
             this.Close();
         }
+
+        private void beginButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -9,9 +9,9 @@ namespace NoughtsAndCrossesGame
     class OXO
     {
         //person for player name
-        public void Person()
+        private void Person()
         {
-            
+                        
         }
         
     }
