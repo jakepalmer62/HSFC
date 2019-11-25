@@ -96,7 +96,7 @@
             this.beginButton.TabIndex = 6;
             this.beginButton.Text = "BEGIN";
             this.beginButton.UseVisualStyleBackColor = false;
-            this.beginButton.Click += new System.EventHandler(this.button1_Click);
+            this.beginButton.Click += new System.EventHandler(this.BeginButton_Click);
             // 
             // textBox2
             // 
