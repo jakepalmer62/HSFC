@@ -6,20 +6,26 @@ namespace WordCounter
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter words one per line and end with STOP");
+            Console.WriteLine("Enter your words one per line and end with STOP");
+            Console.WriteLine("Typing STOP will display your words counted and in alphabetical order");
             WordCounter dictionary = new WordCounter(100);
-            string currentWord = "";           
+            string Word = "";           
            
-            while (currentWord != "STOP")
+            while (Word != "STOP")
             {
-                currentWord = Console.ReadLine();
-                if (currentWord != "STOP")
+                Word = Console.ReadLine();
+                if (Word != "STOP")
                 {
-                    dictionary.AddString(currentWord);
+                    dictionary.AddString(Word);
+                }
+                if (Word != "CLOSE")
+                {
+                    
                 }
             }           
             Console.WriteLine(dictionary);
             Console.ReadLine();
+
         }    
     }
 }
