@@ -8,9 +8,7 @@ namespace WordCounter
     {
        
         private WordCountPair[] collection;
-        private int nextFreeLocation = 0;
-
-        // constructor takes a parameter to specify how big the array should be
+        private int nextFreeLocation = 0;      
         public WordCounter(int maxSize)
         {
             collection = new WordCountPair[maxSize];

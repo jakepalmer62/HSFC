@@ -6,27 +6,27 @@ namespace WordCounter
 {
     class WordCountPair
     {
-        private String word;
+        private String Sentance;
         private int count;
 
-        //creates a word count pair
+        //creates word count pair
         public WordCountPair(string theWord, int theCount)
         {
-            word = theWord;
+            Sentance = theWord;
             count = theCount;
         }
-        public void SetWord(String theWord)
+        public void SetSentance(String theSentance)
         {
-            word = theWord;
+            Sentance = theSentance;
 
         }
         public void SetCount(int theCount)
         {
             count = theCount;
         }
-        public String GetWord()
+        public String GetSentance()
         {
-            return word;
+            return Sentance;
         }
         public int GetCount()
         {
@@ -35,11 +35,11 @@ namespace WordCounter
 
         public override string ToString()
         {
-            return word + "  " + count;
+            return Sentance + "  " + count;
         }
         public int CompareTo(String theWord)
         {
-            return word.CompareTo(theWord);
+            return Sentance.CompareTo(theWord);
         }
 
     }
