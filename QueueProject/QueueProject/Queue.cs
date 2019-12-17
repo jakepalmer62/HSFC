@@ -6,7 +6,6 @@ namespace QueueProject
 {
     class Queue
     {
-        int NextFreeLocation;
         int QueueLength;
         int Front = 0;
         int Back = 0;
@@ -25,6 +24,7 @@ namespace QueueProject
                 QueueItems[Back] = theObject;
                 Back = Back + 1;
                 QueueLength++;
+               
             }
         }
         public void DeQueue(Object theObject)
