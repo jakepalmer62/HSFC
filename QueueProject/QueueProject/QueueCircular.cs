@@ -49,6 +49,5 @@ namespace QueueProject
         {
             return (this.length == 0);
         }
-    }
-    
+    }    
 }

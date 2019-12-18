@@ -8,42 +8,42 @@ namespace QueueProject
         {
             QueueCircular Myqueue = new QueueCircular(10);
             bool running;
-            Console.WriteLine("Select which process you would like to run by typing in it's number. The maximum size of the queue is 10");
+            Console.WriteLine("Select which process you would like to run by typing in it's letter in capitals. The maximum size of the queue is 10");
             running = true;
 
             while (running == true)
             {
-                Console.WriteLine("1. Add Person");
-                Console.WriteLine("2. Remove Person");
-                Console.WriteLine("3. View Queue Length");
-                Console.WriteLine("4. Display Queue");
-                Console.WriteLine("5. Quit");
+                Console.WriteLine("A. Add Person");
+                Console.WriteLine("B. Remove Person");
+                Console.WriteLine("C. View Queue Length");
+                Console.WriteLine("D. Display Queue");
+                Console.WriteLine("E. Quit");
                 Console.ReadLine();
             }
             
             
             switch (Console.ReadLine())
             {
-                case "1": //Enqueue
+                case "A": //Enqueue
                     {
                         Console.WriteLine("Type what you want to add to the queue");
                         QueueCircular.EnQueue(Console.ReadLine());
                         break;
                     }
 
-                case "2": //Dequeue
+                case "B": //Dequeue
                     {
                         Console.WriteLine("Type what you need to remove from the queue");
                         QueueCircular.DeQueue(Console.ReadLine());
                         break;
                     }
 
-                case "3":
+                case "C":
                     {
                         break;
                     }
 
-                case "4":
+                case "D":
                     {
 
 
@@ -52,7 +52,7 @@ namespace QueueProject
                         break;
                     }
 
-                case "5":
+                case "E":
                     {
 
                         running = false;
