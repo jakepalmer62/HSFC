@@ -4,34 +4,34 @@ using System.Text;
 
 namespace QueueProject
 {
-    public class Queue
+    public class QueueCreep // this queue creeps along the array
     {
         int QueueLength;
         int Front = 0;
         int Back = 0;
-        public readonly Object[] queue;
+        public Object[] queueCreep;
         private int MaxSize = 10;
 
-        public Queue(int QueueSize)
+        public QueueCreep(int QueueSize)
         {
             MaxSize = QueueSize;
-            queue = new Object[QueueSize];
+            queueCreep = new Object[QueueSize];
         }
-        public void EnQueue(Queue theQueue)
+        public void EnQueue(QueueCreep theQueue)
         {
             if (QueueLength > MaxSize)
             {
-                queue[Back] = theQueue;
+                queueCreep[Back] = theQueue;
                 Back = Back + 1;
                 QueueLength++;
                
             }
         }
-        public void DeQueue(Queue theQueue)
+        public void DeQueue(QueueCreep theQueue)
         {
             if (QueueLength > 0)
             {
-                object found = queue[0];
+                object found = queueCreep[0];
                 Front = Front + 1 % MaxSize;
                 QueueLength--;
             }

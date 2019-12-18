@@ -6,7 +6,7 @@ namespace QueueProject
     {
         static void Main(string[] args)
         {
-            Queue queue = new Queue(10);
+            QueueCircular Myqueue = new QueueCircular(10);
             bool running;
             Console.WriteLine("Select which process you would like to run by typing in it's number. The maximum size of the queue is 10");
             running = true;
@@ -26,21 +26,20 @@ namespace QueueProject
             {
                 case "1": //Enqueue
                     {
-                        Console.WriteLine("Type what you want to add to queue");
-                        queue.EnQueue(Console.ReadLine());
+                        Console.WriteLine("Type what you want to add to the queue");
+                        QueueCircular.EnQueue(Console.ReadLine());
                         break;
                     }
 
                 case "2": //Dequeue
                     {
                         Console.WriteLine("Type what you need to remove from the queue");
-                        queue.Dequeue(Console.ReadLine());
+                        QueueCircular.DeQueue(Console.ReadLine());
                         break;
                     }
 
                 case "3":
                     {
-                        Console.WriteLine(queue.Length);
                         break;
                     }
 
