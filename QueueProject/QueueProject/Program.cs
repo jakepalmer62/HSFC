@@ -6,9 +6,11 @@ namespace QueueProject
     {
         static void Main(string[] args)
         {
+            QueueShunt MyQueueShunt = new QueueShunt(10);
             QueueCreep MyQueueCreep = new QueueCreep(10);
             QueueCircular Myqueue = new QueueCircular(10);
             bool running;
+
             Console.WriteLine("Select which process you would like to run by typing in it's letter in capitals. The maximum size of the queue is 10");
             running = true;
 
@@ -20,8 +22,7 @@ namespace QueueProject
                 Console.WriteLine("D. Quit");
                 Console.ReadLine();
             }
-            
-            
+                        
             switch (Console.ReadLine())
             {
                 case "A": //Enqueue
