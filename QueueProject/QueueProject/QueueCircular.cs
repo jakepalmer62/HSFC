@@ -6,11 +6,11 @@ namespace QueueProject
 {
     public class QueueCircular // this queue repeats along a circle so that it doesn't continually creep backwards.
     {
-        private Object[] theItems;
-        private int front = 0;                 
-        private int back = 0;                 
-        private int maxSize = 10;              
-        private int length = 0;
+        public Object[] theItems;
+        public int front = 0;                 
+        public int back = 0;                 
+        public int maxSize = 10;              
+        public int length = 0;
 
         public QueueCircular(int theSize)
         {
@@ -28,7 +28,7 @@ namespace QueueProject
             }
         }
 
-        public Object DeQueue() // remove an item from the queue
+        public void DeQueue(Object theObject) // remove an item from the queue
         {
             Object temp = null;
             if (length > 0)
@@ -36,8 +36,7 @@ namespace QueueProject
                 temp = theItems[front];         
                 front = (front + 1) % maxSize;    
                 length--;
-            }
-            return temp;                          
+            }                        
         }
 
         public int Length()

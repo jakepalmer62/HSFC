@@ -6,6 +6,7 @@ namespace QueueProject
     {
         static void Main(string[] args)
         {
+            QueueCreep MyQueueCreep = new QueueCreep(10);
             QueueCircular Myqueue = new QueueCircular(10);
             bool running;
             Console.WriteLine("Select which process you would like to run by typing in it's letter in capitals. The maximum size of the queue is 10");
@@ -16,8 +17,7 @@ namespace QueueProject
                 Console.WriteLine("A. Add Person");
                 Console.WriteLine("B. Remove Person");
                 Console.WriteLine("C. View Queue Length");
-                Console.WriteLine("D. Display Queue");
-                Console.WriteLine("E. Quit");
+                Console.WriteLine("D. Quit");
                 Console.ReadLine();
             }
             
@@ -27,39 +27,31 @@ namespace QueueProject
                 case "A": //Enqueue
                     {
                         Console.WriteLine("Type what you want to add to the queue");
-                        QueueCircular.EnQueue(Console.ReadLine());
+                        Myqueue.EnQueue(Console.ReadLine());
                         break;
                     }
 
                 case "B": //Dequeue
                     {
                         Console.WriteLine("Type what you need to remove from the queue");
-                        QueueCircular.DeQueue(Console.ReadLine());
+                        Myqueue.DeQueue(Console.ReadLine());
                         break;
                     }
 
                 case "C":
                     {
+                        Console.WriteLine("The queue length is:" + Myqueue.length);
                         break;
                     }
 
                 case "D":
                     {
-
-
-
-
-                        break;
-                    }
-
-                case "E":
-                    {
-
                         running = false;
                         Console.WriteLine("Press enter to exit program");
                         Console.ReadKey();
                         break;
                     }
+
             }        
 
         }
