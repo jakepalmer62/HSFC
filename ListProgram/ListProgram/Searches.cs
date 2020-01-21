@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BinaryChop
+namespace ListProgram
 {
     class Searches
     {
         public int binarySearch(String[] theList, String itemToSearchFor)
         {
-            int min = 0;                   
-            int max = theList.Length - 1;  
+            int min = 0;
+            int max = theList.Length - 1;
             int mid;
 
             while (min <= max)
@@ -21,7 +21,7 @@ namespace BinaryChop
                 {
                     return mid;
                 }
-                else if (itemToSearchFor.CompareTo(theList[mid]) < 0)   // found the item 
+                else if (itemToSearchFor.CompareTo(theList[mid]) < 0)   //Item Found
                 {
                     max = mid - 1;
                 }
@@ -38,10 +38,10 @@ namespace BinaryChop
         {
             if (theList.Length == 0)
             {
-                return -1;  //error code
+                return -1;  //error code, return -1
             }
 
-            int counter;    
+            int counter;
             for (counter = 0; counter < theList.Length; counter++)
             {
                 if (itemToSearchFor == theList[counter])
