@@ -17,14 +17,14 @@ namespace ListProgram
             List = new String[maxSize];
             String CurrentWord = " ";
 
-            Console.WriteLine("Please enter your words ending with stop.");
+            Console.WriteLine("Please enter your words ending with STOP.");
             Console.ReadLine();
 
             while (CurrentWord != "STOP")
             {
                 dictionary.AddString(Console.ReadLine());
             }
-
+                    
             if (CurrentWord == "STOP")
             {
                 dictionary.AddString(CurrentWord);
@@ -37,7 +37,7 @@ namespace ListProgram
             {
             case "S":
                 {
-                    Console.WriteLine();
+                    
                     break;
                 }
 
