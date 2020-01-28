@@ -10,6 +10,8 @@ namespace HangmanProject
     {
         static void Main(string[] args)
         {  
+
+
         }
     }
 }
