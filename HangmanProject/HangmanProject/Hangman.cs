@@ -13,17 +13,17 @@ namespace HangmanProject
         private String[] dictionary;
         private Players[] thePlayers;
         private StringBuilder CurrentReveal;
-        private Random rand = new Random();
+        private Random rnd = new Random();
 
         //Word used in game
-        private String getRandomWord()
+        private String GetRandomWord()
         {
-            return dictionary[rand.Next(0, dictionary.Length)].ToUpper();
+           
         }
 
-        public void RestartWithNewWord(String theWord)
+        public void restartWithNewWord()
         {
-            theWord = getRandomWord();
+            theWord = GetRandomWord();
             CurrentReveal = new StringBuilder(theWord);
             for (int i = 0; i < theWord.Length; i++)
             {
@@ -31,7 +31,7 @@ namespace HangmanProject
             }
         }
 
-        public String GetWord()//
+        public String GetWord()
         {
             return CurrentReveal.ToString();
         }
@@ -39,6 +39,31 @@ namespace HangmanProject
         public String GetLettersUsed()
         {
             return LettersUsed;
+        }
+
+        //guesses
+        public int MakeGuess(char Letter)
+        {
+            int Count = 0;
+            if (LettersUsed.Contains(Letter))
+            {
+                return -1;
+            }
+            if (theWord.Contains(Letter))
+            {
+                LettersUsed = LettersUsed + Letter;
+
+                // now replace the _ with correctly guessed letters
+                for (int i = 0; i < theWord.Length; i++)
+                {
+                    if (theWord[i] == Letter)
+                    {
+                        CurrentReveal[i] = Letter;
+                        Count++;
+                    }
+                }
+            }
+            return Count;   // will still be zero if not found
         }
         //players
         public Hangman (String Player1, String Player2)

@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace HangmanProject
 {
-    class Program
+    class Dictionary
     {
-        static void Main(string[] args)
-        {
+        public int Length = 10;
+        public Random rnd = new Random();
 
-        }
+ 
+    
+
+
     }
 }
+
+     
+
+
+
