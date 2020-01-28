@@ -9,38 +9,21 @@ namespace HangmanProject
     class Hangman
     {
         private String LettersUsed = " ";
-        private String theWord = " ";
-        private String[] dictionary;
         private Players[] thePlayers;
-        private StringBuilder CurrentReveal;
-        private Random rnd = new Random();
+        public StringBuilder CurrentReveal;
+        private static Random rnd = new Random();
 
-        //Word used in game
-        private String GetRandomWord()
-        {
-           
-        }
-
-        public void restartWithNewWord()
-        {
-            theWord = GetRandomWord();
-            CurrentReveal = new StringBuilder(theWord);
-            for (int i = 0; i < theWord.Length; i++)
-            {
-                CurrentReveal[i] = '_';
-            }
-        }
-
-        public String GetWord()
-        {
-            return CurrentReveal.ToString();
-        }
+        //Word used in game       
+        static string[] wordBank = { "Blue", "Black", "Yellow", "Orange", "Green", "Purple" };
+        static Random Rand = new Random();
+        private static string wordToGuess = wordBank[Rand.Next(0, wordBank.Length)];
+        string wordToGuessUppercase = wordToGuess.ToUpper();
 
         public String GetLettersUsed()
         {
             return LettersUsed;
         }
-
+    
         //guesses
         public int MakeGuess(char Letter)
         {
@@ -49,14 +32,14 @@ namespace HangmanProject
             {
                 return -1;
             }
-            if (theWord.Contains(Letter))
+            if (wordToGuess.Contains(Letter))
             {
                 LettersUsed = LettersUsed + Letter;
 
                 // now replace the _ with correctly guessed letters
-                for (int i = 0; i < theWord.Length; i++)
+                for (int i = 0; i < wordToGuess.Length; i++)
                 {
-                    if (theWord[i] == Letter)
+                    if (wordToGuess[i] == Letter)
                     {
                         CurrentReveal[i] = Letter;
                         Count++;
