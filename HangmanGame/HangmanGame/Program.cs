@@ -21,10 +21,10 @@ namespace HangmanGame
             listwords[7] = "pineapple";
             listwords[8] = "orange";
             listwords[9] = "mango";
-            Random randGen = new Random();
+            Random rand = new Random();
 
             //selecting word
-            var idx = randGen.Next(0, 9);
+            var idx = rand.Next(0, 9);
             string mysteryWord = listwords[idx];
             char[] guess = new char[mysteryWord.Length];
             Console.Write("Please enter your guess: ");
