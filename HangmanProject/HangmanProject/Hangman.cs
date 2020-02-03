@@ -17,8 +17,9 @@ namespace HangmanProject
 
         //Word used in game
         private String GetRandomWord()
-        {
-           
+        {           
+             string[] theWord = new string[] { "will", "physics", "science", "apple", "computer", "hello" };
+             return theWord[rnd.Next(0, theWord.Length)];            
         }
 
         public void restartWithNewWord()
