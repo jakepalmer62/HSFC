@@ -13,20 +13,19 @@ namespace Bus_Timetable
     {
         static void Main(string[] args)
         {
-            string fileContent = Resources.data;
+            String fileContent = Resources.data;
             StringReader reader = new StringReader(fileContent);
             String line;
-            String[] theDictionary = new String[100];
-            int nextFreeLocation = 0;
+            String[] theDictionary = new String[100];            
             String theText = "";
             SerialSearch mySearching = new SerialSearch();
+            int nextFreeLocation = 0;
 
             while ((line = reader.ReadLine()) != null)
             {
                 theDictionary[nextFreeLocation] = line;
                 nextFreeLocation++;
             }
-
 
             for (int i = 0; i < nextFreeLocation; i++)
             {
@@ -35,10 +34,9 @@ namespace Bus_Timetable
             
             Console.WriteLine(theText);
             Console.WriteLine("What Bus are you looking for? Please enter it exactly as it is shown.");
-            string itemToSearchFor = Console.ReadLine();
+            String itemToSearchFor = Console.ReadLine();
 
-
-            int result = mySearching.serialSearch(theDictionary, itemToSearchFor);
+            int result = mySearching.linearSearch(theDictionary, itemToSearchFor);
             if (result == -1)
             {
                 Console.WriteLine("String not Found");

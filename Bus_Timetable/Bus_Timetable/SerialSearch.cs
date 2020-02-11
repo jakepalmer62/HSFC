@@ -8,7 +8,7 @@ namespace Bus_Timetable
 {
     public class SerialSearch
     {
-        public int serialSearch(String[] theDictionary, String itemToSearchFor)
+        public int linearSearch(String[] theDictionary, String itemToSearchFor)
         {
 
             if (theDictionary.Length == 0)
