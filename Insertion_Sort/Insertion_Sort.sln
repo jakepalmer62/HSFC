@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insertion_Sort", "Insertion_Sort\Insertion_Sort.csproj", "{D8C4CEE6-C694-4AAF-B3A8-810DD82904B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insertion_BubbleSort", "Insertion_Sort\Insertion_BubbleSort.csproj", "{D8C4CEE6-C694-4AAF-B3A8-810DD82904B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

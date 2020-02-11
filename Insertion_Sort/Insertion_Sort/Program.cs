@@ -13,13 +13,20 @@ namespace Insertion_Sort
             Console.WriteLine("This program will read items from a list and then sort them into ascending order.");
             Console.WriteLine("==================================================================================================");
             InsertionSort mySorting = new InsertionSort();
+            BubbleSort myBubbles = new BubbleSort();
+            
+            // list
             int[] smallList = { 10, 3, 9, 2, 8, 4, 6, 7, 5, 16, 1, 24, 36, 32, 22, 21, };
             int[] longList = new int[1000];
             Random rnd = new Random();
 
+            //displaying lists
             mySorting.DisplayList(smallList);
             mySorting.InsertSort(ref smallList);
             mySorting.DisplayList(smallList);
+            myBubbles.Display(smallList);
+            myBubbles.StandardBubbleSort(ref smallList);
+            myBubbles.Display(smallList);
 
             for (int i = 0; i < longList.Length; i++)
             {

@@ -27,6 +27,7 @@ namespace Insertion_Sort
 
         public void DisplayList(int[] aList)
         {
+            Console.WriteLine("This is the insertionsort list");
             Console.Write("Output of list: ");
             for (int i = 0; i <= aList.Length - 1; i++)
             {
