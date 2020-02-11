@@ -39,11 +39,12 @@ namespace Bus_Timetable
             int result = mySearching.linearSearch(theDictionary, itemToSearchFor);
             if (result == -1)
             {
-                Console.WriteLine("String not Found");
+                Console.WriteLine("Bus not found.");
             }
+
             else
             {
-                Console.WriteLine("String found at: ");
+                Console.WriteLine("Bus found at position: ");
                 Console.WriteLine(result.ToString());
             }
             Console.WriteLine("Thanks for using the bus timetable program, press any key to exit.");
