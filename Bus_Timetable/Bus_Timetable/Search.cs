@@ -6,28 +6,31 @@ using System.Threading.Tasks;
 
 namespace Bus_Timetable
 {
-    public class SerialSearch
+    public class Search
     {
         public int linearSearch(String[] theDictionary, String itemToSearchFor)
         {
+            int Counter;  
 
             if (theDictionary.Length == 0)
             {
                 return -1;
             }
-            int counter;    
-            for (counter = 0; counter < theDictionary.Length; counter++)
+              
+            for (Counter = 0; Counter < theDictionary.Length; Counter++)
             {
                 // check if item (at current position) is equal to item searched 
                 // if item found return the position/index (the value of the counter) 
-                if (itemToSearchFor == theDictionary[counter])
+                if (itemToSearchFor == theDictionary[Counter])
 
                 {
-                    return counter;
+                    return Counter;
                 }
             }
             // If we get here, them item is still not found, return -1 
             return -1;
+
+
 
         }
     }
