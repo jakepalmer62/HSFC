@@ -8,30 +8,58 @@ namespace Bus_Timetable
 {
     public class Search
     {
-        public int linearSearch(String[] theDictionary, String itemToSearchFor)
+        public String BusSearch(String[] theDictionary, String itemToSearchFor)
         {
-            int Counter;  
+            // Let's start with our user input
+            String startTown;
+            String startTime;
+            String endTime;
+            Console.WriteLine("Please enter your current town");
+            startTown = Console.ReadLine();
+            Console.WriteLine("Please enter your preferred departure window start");
+            startTime = Console.ReadLine();
+            Console.WriteLine("Please enter your preferred departure window end");
+            endTime = Console.ReadLine();
 
-            if (theDictionary.Length == 0)
+            char[] delimiter = { ' ' }; // we use space as a delimiter for split below
+            String[] tokens;          // holds individual words (tokens) in a string
+            String currentLine;
+            bool foundATown = false;
+            // Now let's process the timetable, one line at a time
+            for (int row = 0; row < nextFreeLocation; row++)
             {
-                return -1;
-            }
-              
-            for (Counter = 0; Counter < theDictionary.Length; Counter++)
-            {
-                // check if item (at current position) is equal to item searched 
-                // if item found return the position/index (the value of the counter) 
-                if (itemToSearchFor == theDictionary[Counter])
-
+                currentLine = theTimeTable[row];
+                // First we search the timetable for the town to search for
+                // Console.WriteLine("Processing: " + currentLine);
+                if (startTown.CompareTo(currentLine.Substring(0, startTown.Length)) == 0)
                 {
-                    return Counter;
+                    // Console.WriteLine("Found an entry...... ");
+
+                    // we have the town we are looking for, so let's process the line
+
+                    tokens = currentLine.Split(delimiter);
+                    // Note than tokens[0] is start town, tokens[1] is end town
+                    for (int timeToken = 2; timeToken < tokens.Length; timeToken++)
+                    {
+                        // test to see if a time is within range
+                        if ((tokens[timeToken].CompareTo(startTime) > 0) &
+                            (tokens[timeToken].CompareTo(endTime) < 0))
+                        {
+                            Console.Write(tokens[timeToken] + " ");
+                            Console.WriteLine(tokens[1]);
+
+
+
+                            foundATown = true;  // record that we are on a new town
+                        }
+                    }
+
                 }
             }
-            // If we get here, them item is still not found, return -1 
-            return -1;
-
-
-
+            if (!foundATown)
+                Console.WriteLine("Sorry no buses were found that met your requirements");
+            Console.ReadLine();
         }
+    }
     }
 }

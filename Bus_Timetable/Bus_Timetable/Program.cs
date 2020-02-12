@@ -16,23 +16,46 @@ namespace Bus_Timetable
             String fileContent = Resources.data;
             StringReader reader = new StringReader(fileContent);
             String line;
-            String[] theStrings = new String[100];            
+            String[] theTimeTable = new String[100];
             String theText = "";
             Search mySearching = new Search();
             int nextFreeLocation = 0;
 
             while ((line = reader.ReadLine()) != null)
             {
-                theStrings[nextFreeLocation] = line;
+                theTimeTable[nextFreeLocation] = line;
                 nextFreeLocation++;
             }
 
             for (int i = 0; i < nextFreeLocation; i++)
             {
-                theText = theText + theStrings[i] + Environment.NewLine;
+                theText = theText + theTimeTable[i] + Environment.NewLine;
             }
-            
-            
-        }
+
+            // User input:
+            String beginningTown;
+            String beginningTime;
+            String endTime;
+            bool foundTown;
+            Console.WriteLine("Please enter your current town");
+            beginningTown = Console.ReadLine();
+            Console.WriteLine("Enter your departure start time");
+            beginningTime = Console.ReadLine();
+            Console.WriteLine("Please enter your departure end time");
+            endTime = Console.ReadLine();
+            char[] delimiter = { ' ' };      
+            foundTown = false;
+            String currentLine;
+
+            for (int row = 0; row > nextFreeLocation; row++)
+            {
+            currentLine = theTimeTable[row];
+            }
+
+            if (beginningTown.CompareTo(currentLine.Substring(0, beginningTown.Length)) == 0)
+            {
+
+            }
+        }    
     }
 }
