@@ -13,14 +13,19 @@ namespace Bus_Timetable
     {
         static void Main(string[] args)
         {
+            // Variables
             String fileContent = Resources.data;
             StringReader reader = new StringReader(fileContent);
             String line;
             String[] theTimeTable = new String[100];
             String theText = "";
-            Search mySearching = new Search();
             int nextFreeLocation = 0;
-
+            String beginningTown;
+            String beginningTime;
+            String endTime;
+            bool townFound;
+       
+            // loop to display timetable items
             while ((line = reader.ReadLine()) != null)
             {
                 theTimeTable[nextFreeLocation] = line;
@@ -32,30 +37,48 @@ namespace Bus_Timetable
                 theText = theText + theTimeTable[i] + Environment.NewLine;
             }
 
-            // User input:
-            String beginningTown;
-            String beginningTime;
-            String endTime;
-            bool foundTown;
+            // User input:                                   
             Console.WriteLine("Please enter your current town");
             beginningTown = Console.ReadLine();
             Console.WriteLine("Enter your departure start time");
             beginningTime = Console.ReadLine();
             Console.WriteLine("Please enter your departure end time");
             endTime = Console.ReadLine();
-            char[] delimiter = { ' ' };      
-            foundTown = false;
-            String currentLine;
-
-            for (int row = 0; row > nextFreeLocation; row++)
+            char[] delimiter = { ' ' };
+            String[] SearchToken;
+            townFound = false;
+            String currentLine = " ";
+            
+            // loops for comparing timetable elements
+            for (int row = 0; row > nextFreeLocation; row++) 
             {
-            currentLine = theTimeTable[row];
+                currentLine = theTimeTable[row];
             }
 
             if (beginningTown.CompareTo(currentLine.Substring(0, beginningTown.Length)) == 0)
             {
+                SearchToken = currentLine.Split(delimiter);
 
+                for (int timeToken = 2; timeToken < SearchToken.Length; timeToken++)
+                {
+                    // test to see if a time is within range
+                    if ((SearchToken[timeToken].CompareTo(beginningTime) > 0) &
+                        (SearchToken[timeToken].CompareTo(endTime) < 0))
+                    {
+                        Console.Write(SearchToken[timeToken] + " ");
+                        Console.WriteLine(SearchToken[1]);
+                        townFound = true;  // record that we are on a new town
+                    }
+                }
+
+                if (!townFound)
+                {
+                    Console.WriteLine("Sorry, no buses found that met your time/destination");
+                }
+                Console.ReadLine();
+               
             }
+
         }    
     }
 }
