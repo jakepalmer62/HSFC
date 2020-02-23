@@ -52,12 +52,5 @@ namespace ListProgram
             //Item not found, returns error code
             return -1;
         }
-
-        public int LinearSearch(String[] theList, String SearchItem)
-        {
-
-        }
-
-        public int
     }
 }
