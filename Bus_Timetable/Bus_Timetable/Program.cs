@@ -24,6 +24,7 @@ namespace Bus_Timetable
             String beginningTime;
             String endTime;
             bool townFound;
+            Console.WriteLine(fileContent);
        
             // loop to display timetable items
             while ((line = reader.ReadLine()) != null)
@@ -49,7 +50,7 @@ namespace Bus_Timetable
             townFound = false;
             String currentLine = " ";
             
-            // loops for comparing timetable elements
+            // Loops for comparing timetable elements
             for (int row = 0; row > nextFreeLocation; row++) 
             {
                 currentLine = theTimeTable[row];
