@@ -8,7 +8,7 @@ namespace Insertion_Sort
 {
     class InsertionSort
     {
-        public void InsertSort(ref int[] theList)
+        public void MyInsertionSort(ref int[] theList)
         {
             int nextItem, i;
 

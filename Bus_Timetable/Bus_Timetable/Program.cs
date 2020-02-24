@@ -54,7 +54,6 @@ namespace Bus_Timetable
             for (int row = 0; row > nextFreeLocation; row++) 
             {
                 currentLine = theTimeTable[row];
-            }
 
             if (beginningTown.CompareTo(currentLine.Substring(0, beginningTown.Length)) == 0)
             {
@@ -66,20 +65,20 @@ namespace Bus_Timetable
                     if ((SearchToken[timeToken].CompareTo(beginningTime) > 0) &
                         (SearchToken[timeToken].CompareTo(endTime) < 0))
                     {
-                        Console.Write(SearchToken[timeToken] + " ");
+                        Console.WriteLine(SearchToken[timeToken] + " ");
                         Console.WriteLine(SearchToken[1]);
                         townFound = true;  // record that we are on a new town
+
                     }
                 }
-
                 if (!townFound)
                 {
                     Console.WriteLine("Sorry, no buses found that met your time/destination");
                 }
                 Console.ReadLine();
-               
-            }
+            }              
 
+            }
         }    
     }
 }

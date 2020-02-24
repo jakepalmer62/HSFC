@@ -8,7 +8,7 @@ namespace Insertion_Sort
 {
     class BubbleSort
     {
-        public void StandardBubbleSort(ref int[] theList)
+        public void MyBubbleSort(ref int[] theList)
         {
             bool swapMade = true;
             int temp = 0;

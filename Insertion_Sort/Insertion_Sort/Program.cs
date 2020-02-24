@@ -22,10 +22,10 @@ namespace Insertion_Sort
 
             //displaying lists
             mySorting.DisplayList(smallList);
-            mySorting.InsertSort(ref smallList);
+            mySorting.MyInsertionSort(ref smallList);
             mySorting.DisplayList(smallList);
             myBubbles.Display(smallList);
-            myBubbles.StandardBubbleSort(ref smallList);
+            myBubbles.MyBubbleSort(ref smallList);
             myBubbles.Display(smallList);
 
             for (int i = 0; i < longList.Length; i++)
