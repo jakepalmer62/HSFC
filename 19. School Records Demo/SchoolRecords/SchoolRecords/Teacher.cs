@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolRecords
 {
-    class Teacher:Person   // "Teacher inherits Person"  or "Teacher extends Person"
+    class Teacher : Person   // "Teacher inherits Person"  or "Teacher extends Person"
     {
         private Subjects teaches;
 

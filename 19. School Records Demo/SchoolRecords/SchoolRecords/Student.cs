@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolRecords
 {
-    class Student: Person
+    class Student : Person
     {
         // student inherits everything from Person 
 
