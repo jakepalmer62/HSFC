@@ -32,9 +32,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.redGhost = new System.Windows.Forms.PictureBox();
+            this.yellowGhost = new System.Windows.Forms.PictureBox();
+            this.pinkGhost = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pacman = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -73,9 +73,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redGhost)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yellowGhost)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pinkGhost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacman)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -120,7 +120,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "wall";
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -144,41 +143,41 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Tag = "wall";
             // 
-            // pictureBox5
+            // redGhost
             // 
-            this.pictureBox5.Image = global::missPACMAN.Properties.Resources.red_guy;
-            this.pictureBox5.Location = new System.Drawing.Point(292, 118);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(36, 38);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Tag = "ghost";
+            this.redGhost.Image = global::missPACMAN.Properties.Resources.red_guy;
+            this.redGhost.Location = new System.Drawing.Point(292, 118);
+            this.redGhost.Margin = new System.Windows.Forms.Padding(4);
+            this.redGhost.Name = "redGhost";
+            this.redGhost.Size = new System.Drawing.Size(36, 38);
+            this.redGhost.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.redGhost.TabIndex = 4;
+            this.redGhost.TabStop = false;
+            this.redGhost.Tag = "ghost";
             // 
-            // pictureBox6
+            // yellowGhost
             // 
-            this.pictureBox6.Image = global::missPACMAN.Properties.Resources.yellow_guy;
-            this.pictureBox6.Location = new System.Drawing.Point(180, 421);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(36, 38);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 5;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Tag = "ghost";
+            this.yellowGhost.Image = global::missPACMAN.Properties.Resources.yellow_guy;
+            this.yellowGhost.Location = new System.Drawing.Point(180, 421);
+            this.yellowGhost.Margin = new System.Windows.Forms.Padding(4);
+            this.yellowGhost.Name = "yellowGhost";
+            this.yellowGhost.Size = new System.Drawing.Size(36, 38);
+            this.yellowGhost.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.yellowGhost.TabIndex = 5;
+            this.yellowGhost.TabStop = false;
+            this.yellowGhost.Tag = "ghost";
             // 
-            // pictureBox7
+            // pinkGhost
             // 
-            this.pictureBox7.Image = global::missPACMAN.Properties.Resources.pink_guy;
-            this.pictureBox7.Location = new System.Drawing.Point(588, 470);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(36, 38);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 6;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Tag = "ghost";
+            this.pinkGhost.Image = global::missPACMAN.Properties.Resources.pink_guy;
+            this.pinkGhost.Location = new System.Drawing.Point(588, 470);
+            this.pinkGhost.Margin = new System.Windows.Forms.Padding(4);
+            this.pinkGhost.Name = "pinkGhost";
+            this.pinkGhost.Size = new System.Drawing.Size(36, 38);
+            this.pinkGhost.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pinkGhost.TabIndex = 6;
+            this.pinkGhost.TabStop = false;
+            this.pinkGhost.Tag = "ghost";
             // 
             // pictureBox3
             // 
@@ -596,9 +595,9 @@
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pacman);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pinkGhost);
+            this.Controls.Add(this.yellowGhost);
+            this.Controls.Add(this.redGhost);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -610,9 +609,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redGhost)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yellowGhost)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pinkGhost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacman)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -655,9 +654,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox redGhost;
+        private System.Windows.Forms.PictureBox yellowGhost;
+        private System.Windows.Forms.PictureBox pinkGhost;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pacman;
         private System.Windows.Forms.PictureBox pictureBox8;
