@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace missPACMAN
@@ -143,7 +136,7 @@ namespace missPACMAN
             // for loop for ghosts, walls and points
             foreach  (Control x in this.Controls)
             {
-                if (x is PictureBox && x.Tag == "wall" || x.Tag == "ghost") // checks if player hits wall/ghost if so game over
+                if (x is PictureBox && x.Tag =="wall" || x.Tag =="ghost") // checks if player hits wall/ghost if so game over
                 {
                     if (((PictureBox)x).Bounds.IntersectsWith(pacman.Bounds) || score == 30)
                     {
@@ -180,9 +173,7 @@ namespace missPACMAN
             if (pinkGhost.Top < 1 || pinkGhost.Top + pinkGhost.Height > ClientSize.Height - 2)
             {
                 ghost3y = -ghost3y;
-            }
-
-            
+            }            
         }
     }
 }
