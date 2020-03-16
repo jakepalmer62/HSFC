@@ -17,7 +17,11 @@ namespace missPACMAN
         int ghost1 = 8;
         int ghost2 = 8; //speed of ghosts, since they are going in different directions we need 2 variables
 
-        // g3 variables (harder ghost, faster speed in different directions)
+        // ghost variables
+        int ghost1x;
+        int ghost1y;
+        int ghost2x;
+        int ghost2y;
         int ghost3x = 8;
         int ghost3y = 8;
 
@@ -106,39 +110,19 @@ namespace missPACMAN
                 pacman.Top += speed;
                 // moves the player to the bottom
             }
-            // end of player movements code            
+            // end of player movements          
 
             // moving ghosts and wall collisons
             redGhost.Left += ghost1;
             yellowGhost.Left += ghost2;
-
-            if (redGhost.Bounds.IntersectsWith(pictureBox4.Bounds))
-            {
-                ghost1 = -ghost1;
-            }
-
-            else if (redGhost.Bounds.IntersectsWith(pictureBox3.Bounds))
-            {
-                ghost1 = -ghost1;
-            }
-
-            if (yellowGhost.Bounds.IntersectsWith(pictureBox1.Bounds))
-            {
-                ghost2 = -ghost2;
-            }
-
-            else if (yellowGhost.Bounds.IntersectsWith(pictureBox2.Bounds))
-            {
-                ghost2 = -ghost2;
-            }
-            // end
+            pinkGhost.Left += ghost3x;
 
             // for loop for ghosts, walls and points
             foreach  (Control x in this.Controls)
             {
-                if (x is PictureBox && x.Tag =="wall" || x.Tag =="ghost") // checks if player hits wall/ghost if so game over
+                if (x is PictureBox && x.Tag == "ghost") // checks if player hits wall/ghost if so game over
                 {
-                    if (((PictureBox)x).Bounds.IntersectsWith(pacman.Bounds) || score == 30)
+                    if (((PictureBox)x).Bounds.IntersectsWith(pacman.Bounds) || score == 12)
                     {
                         pacman.Left = 0;
                         pacman.Top = 25;
@@ -158,14 +142,18 @@ namespace missPACMAN
             }
             // end of checking loop
 
+            // pink ghost
             pinkGhost.Left += ghost3x; // crazy pink ghost (faster than others)
             pinkGhost.Top += ghost3y;
 
-            if (pinkGhost.Left < 1 || pinkGhost.Left + pinkGhost.Width > ClientSize.Width -2 || 
-                (pinkGhost.Bounds.IntersectsWith(pictureBox4.Bounds)) || 
-                pinkGhost.Bounds.IntersectsWith(pictureBox3.Bounds) || 
-                pinkGhost.Bounds.IntersectsWith(pictureBox2.Bounds) || 
-                pinkGhost.Bounds.IntersectsWith(pictureBox1.Bounds))
+            if (pinkGhost.Left < 1 || pinkGhost.Left + pinkGhost.Width > ClientSize.Width - 2 ||
+                (pinkGhost.Bounds.IntersectsWith(wall4.Bounds)) ||
+                pinkGhost.Bounds.IntersectsWith(wall3.Bounds) ||
+                pinkGhost.Bounds.IntersectsWith(wall2.Bounds) ||
+                pinkGhost.Bounds.IntersectsWith(wall1.Bounds) ||
+                pinkGhost.Bounds.IntersectsWith(wall5.Bounds)||
+                pinkGhost.Bounds.IntersectsWith(wall6.Bounds))
+                
             {
                 ghost3x = -ghost3x;
             }
@@ -173,7 +161,47 @@ namespace missPACMAN
             if (pinkGhost.Top < 1 || pinkGhost.Top + pinkGhost.Height > ClientSize.Height - 2)
             {
                 ghost3y = -ghost3y;
-            }            
+            }
+            
+            // yellow ghost
+            if (yellowGhost.Left < 1 || yellowGhost.Left + yellowGhost.Width > ClientSize.Width - 2 ||
+                (yellowGhost.Bounds.IntersectsWith(wall4.Bounds)) ||
+                yellowGhost.Bounds.IntersectsWith(wall3.Bounds) ||
+                yellowGhost.Bounds.IntersectsWith(wall2.Bounds) ||
+                yellowGhost.Bounds.IntersectsWith(wall1.Bounds) ||
+                yellowGhost.Bounds.IntersectsWith(wall5.Bounds) ||
+                yellowGhost.Bounds.IntersectsWith(wall6.Bounds))
+
+            {
+                ghost1x = -ghost1x;
+            }
+
+            if (yellowGhost.Top < 1 || yellowGhost.Top + yellowGhost.Height > ClientSize.Height - 2)
+            {
+                ghost1y = -ghost1y;
+            }
+
+            // red ghost
+            if (redGhost.Left < 1 || redGhost.Left + redGhost.Width > ClientSize.Width - 2 ||
+                (redGhost.Bounds.IntersectsWith(wall4.Bounds)) ||
+                redGhost.Bounds.IntersectsWith(wall3.Bounds) ||
+                redGhost.Bounds.IntersectsWith(wall2.Bounds) ||
+                redGhost.Bounds.IntersectsWith(wall1.Bounds) ||
+                redGhost.Bounds.IntersectsWith(wall5.Bounds) ||
+                redGhost.Bounds.IntersectsWith(wall6.Bounds))
+
+            {
+                ghost2x = -ghost2x;
+            }
+
+            
+
+            
+
+            if (redGhost.Top < 1 || redGhost.Top + redGhost.Height > ClientSize.Height - 2)
+            {
+                ghost2y = -ghost2y;
+            }
         }
     }
 }
